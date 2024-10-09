@@ -12,7 +12,7 @@ import org.junit.runner.RunWith;
         tags = "@2" ,
         dryRun = false
 
-
+// asdasd
 )
 public class BSRunner {
 }
