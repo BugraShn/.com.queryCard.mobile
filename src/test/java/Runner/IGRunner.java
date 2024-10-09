@@ -12,7 +12,8 @@ import org.junit.runner.RunWith;
         tags = "@2" ,
         dryRun = false
 
-
+     ///bugra olmuyorsa burak basini
+        //dasdfghjklöä
 )
 public class IGRunner {
 }
