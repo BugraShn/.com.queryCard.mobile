@@ -13,6 +13,7 @@ import org.junit.runner.RunWith;
         dryRun = false
 
 // asdasd
+        //asdaşldıiaşsodıasd
 )
 public class BSRunner {
 }
