@@ -14,6 +14,7 @@ import org.junit.runner.RunWith;
 
      ///bugra olmuyorsa burak basini
         //dasdfghjklöä
+        ///oldu calisirsak yapariz
 )
 public class IGRunner {
 }
