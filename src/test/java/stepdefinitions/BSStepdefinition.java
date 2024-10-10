@@ -13,5 +13,6 @@ import static utilities.Driver.quitAppiumDriver;
 public class BSStepdefinition extends OptionsMet {
 // jenkins denemesi
 // jenksinasdşlkasd
+    // teknik ekip denemesi
 }
 
