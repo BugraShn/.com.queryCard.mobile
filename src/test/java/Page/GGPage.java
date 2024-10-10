@@ -8,8 +8,12 @@ import static utilities.Driver.getAppiumDriver;
 public class GGPage {
 
     public GGPage(){
-        PageFactory.initElements(new AppiumFieldDecorator(getAppiumDriver()),this);
+       // PageFactory.initElements(new AppiumFieldDecorator(getAppiumDriver()),this);
     }
+
+
+
+
 
 
 }
