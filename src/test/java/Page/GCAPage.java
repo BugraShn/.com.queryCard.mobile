@@ -45,6 +45,7 @@ public class GCAPage {
         ReusableMethods.wait(3);
         UseEmailInsteadButton.click();
         ReusableMethods.wait(3);
+        EmailButton.click();
         OptionsMet.clickAndSendKeys(EmailButton,email);
 
         driver.pressKey(new KeyEvent(AndroidKey.ENTER));
