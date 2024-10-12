@@ -4,11 +4,17 @@ import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
+import utilities.OptionsMet;
+import utilities.ReusableMethods;
+
+import javax.sound.midi.InvalidMidiDataException;
+
+import static org.junit.Assert.assertTrue;
 import static utilities.Driver.getAppiumDriver;
 
 public class IGPage {
-    public IGPage(){
-        PageFactory.initElements(new AppiumFieldDecorator(getAppiumDriver()),this);
+    public IGPage() {
+        PageFactory.initElements(new AppiumFieldDecorator(getAppiumDriver()), this);
     }
 
     // "Men" kategorisini bulma
@@ -22,7 +28,7 @@ public class IGPage {
     public WebElement whiteButton;
     @AndroidFindBy(uiAutomator = "new UiSelector().description(\"Add To Cart\")")
     public WebElement addToCartButton;
-    @AndroidFindBy(uiAutomator  ="new UiSelector().description(\"Favorite\")")
+    @AndroidFindBy(uiAutomator = "new UiSelector().description(\"Favorite\")")
     public WebElement favoriteButton;
     @AndroidFindBy(uiAutomator = "new UiSelector().className(\"android.widget.ImageView\").instance(12)")
     public WebElement cardButton;
@@ -45,12 +51,46 @@ public class IGPage {
     public WebElement myAccountMenu;
 
 
+    public void MenCardMethod() throws InvalidMidiDataException {
+        categoriesMen.click();
+        ReusableMethods.wait(5);
+        kategotiyButton.click();
+        ReusableMethods.wait(5);
+        OptionsMet.swipe(434, 1800, 434, 900);
+        ReusableMethods.wait(3);
+        whiteButton.click();
+        ReusableMethods.wait(3);
+        addToCartButton.click();
+        ReusableMethods.wait(5);
+        favoriteButton.click();
+        ReusableMethods.wait(5);
+        cardButton.click();
+        assertTrue(urunText.isDisplayed());
+        ReusableMethods.wait(5);
+        wishListButton.click();
+        ReusableMethods.wait(5);
 
 
+    }
+
+    public void MenFilterMethod() {
+        categoriesMen.click();
+        ReusableMethods.wait(3);
+        assertTrue(filterButton.isDisplayed());
+        ReusableMethods.wait(3);
+        filterButton.click();
+        ReusableMethods.wait(3);
+        sortedbyButton.isDisplayed();
+        ReusableMethods.wait(3);
+        sortedbyButton.click();
+        ReusableMethods.wait(3);
+        lowToHighButton.click();
+        ReusableMethods.wait(3);
+        assertTrue(productsText.isDisplayed());
+        ReusableMethods.wait(3);
 
 
-
-
+    }
 
 
 }
