@@ -90,7 +90,21 @@ public class BSStepdefinition extends OptionsMet {
         ReusableMethods.wait(1);
     }
 
+    @Given("User click the button with Adidas Shoe")
+    public void user_click_the_button_with_adidas_shoe() throws InvalidMidiDataException {
+        OptionsMet.swipe(532,1726,532,262);
+        page.homePageadidasAyakkabi.click();
+        ReusableMethods.wait(3);
+    }
 
+
+    @Given("Selects {string} and confirms the {string} text")
+    public void selects_and_confirms_the_text(String detay, String productDetay) throws InvalidMidiDataException {
+        OptionsMet.swipe(542,1928,542,447);
+       ReusableMethods.scrollAndClickByDescription(detay);
+       ReusableMethods.scrollAndClickByDescription(productDetay);
+
+    }
 
 
 }
