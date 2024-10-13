@@ -7,6 +7,8 @@ import io.appium.java_client.remote.MobileCapabilityType;
 import io.appium.java_client.touch.WaitOptions;
 import io.appium.java_client.touch.offset.PointOption;
 import org.apache.commons.io.FileUtils;
+import org.junit.Assert;
+import org.junit.Test;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Pause;
@@ -112,6 +114,35 @@ public class ReusableMethods {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+    }
+
+    public static void scrollAndClickByDescription(String text) {
+        AndroidDriver driver = (AndroidDriver) Driver.getAppiumDriver();
+        boolean canScrollMore = true;
+
+        // Kaydırılabilecek bir alan olduğu sürece kaydırma işlemi yapar
+        while (canScrollMore) {
+            try {
+                // Sayfada belirli bir metni arar
+                // new UiSelector().description("Men T-Shirt")
+                WebElement element = driver.findElement(MobileBy.AndroidUIAutomator(
+                        "new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView("
+                                + "new UiSelector().description(\"" + text + "\"));"
+
+                ));
+
+                // Eğer element bulunursa, tıklama işlemini gerçekleştir
+                Assert.assertTrue(element.isDisplayed());
+
+                element.click();
+                canScrollMore = false; // Döngüyü sonlandır
+            } catch (Exception e) {
+                // Eğer element bulunamazsa ya da kaydırılacak alan kalmamışsa, döngüyü sonlandır
+                canScrollMore = false;
+            }
+
+        }
+
     }
 
 

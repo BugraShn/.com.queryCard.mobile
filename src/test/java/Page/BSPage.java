@@ -53,6 +53,14 @@ public class BSPage {
     @AndroidFindBy(uiAutomator = "new UiSelector().description(\"*Use Email Instead\")")
     public WebElement useEmailText;
 
+    @AndroidFindBy(uiAutomator = "new UiSelector().description(\"Adidas Ultraboost 21 Sneakers\n" +
+            "0 (0  Reviews)\n" +
+            "$180.00\")")
+    public WebElement homePageadidasAyakkabi;
+
+    @AndroidFindBy(uiAutomator = "new UiSelector().description(\"White\")")
+    public WebElement adidasWhiteColor;
+
 
 
 
@@ -72,6 +80,8 @@ public class BSPage {
         signUpPasswordBox.click();
         signUpPasswordBox.sendKeys(password);
     }
+
+
 
 
 }
