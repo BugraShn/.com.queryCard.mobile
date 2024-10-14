@@ -1,8 +1,11 @@
+
+@US_008
 Feature: Home page
-  Background: User opens the app
-    * User makes driver adjustments
+  #Background: User opens the app
+
   @1
   Scenario: Sign In
+    * User makes driver adjustments
     * User confirms to be on the homepage
     * User clicks the button with description "Profile"
     * User clicks the button with description "Sign In"

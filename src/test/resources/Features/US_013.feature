@@ -7,10 +7,12 @@ Feature: Men category window and subcategories should be visible and active in t
     * As a user muss be "mobileNumber" phone and "Password" password Login
     * User confirms to be on the homepage
 
+
   Scenario:
 
   @TC1301
   Scenario: Men category window and subcategories visibility and active test in the body section of the home page
+
 
     * "Men" category window and subcategories should be visiblty test
 

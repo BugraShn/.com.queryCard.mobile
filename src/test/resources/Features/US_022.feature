@@ -8,8 +8,14 @@ Feature: Profile icon visibility test on homepage
 
 
 
+
+
   @TC2201
   Scenario: The profile icon should be visible on the homepage
+    * User makes driver adjustments
+    * User clicks the button with description "Profile"
+    * User clicks the button with description "Sign In"
+    * As a user muss be "mobileNumber" phone and "Password" password Login
 
     * User clicks the button with description "Profile"
 
@@ -22,6 +28,7 @@ Feature: Profile icon visibility test on homepage
       * User clicks the button with description "Profile"
       * The "Logout" link should be visible in the profile dashboard sidebar
       * The user clicks on the Logout button
+      #hkhlkhlkjlkj
 
 
 
