@@ -60,7 +60,7 @@ public class IGStepdefinition extends OptionsMet {
      ReusableMethods.KordinatlaTiklama();
     }
 
-
+//////jlököälä
 
     }
 
