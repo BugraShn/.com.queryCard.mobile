@@ -7,6 +7,7 @@ import io.cucumber.java.en.Given;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
+import utilities.ConfigReader;
 import utilities.OptionsMet;
 import utilities.ReusableMethods;
 
@@ -19,6 +20,8 @@ import static utilities.Driver.quitAppiumDriver;
 public class BSStepdefinition extends OptionsMet {
 
     BSPage page = new BSPage();
+    QueryCardPage card = new QueryCardPage();
+    Actions actions = new Actions(getAppiumDriver());
 
 
     @Given("Home page categories text is verified")
@@ -105,6 +108,19 @@ public class BSStepdefinition extends OptionsMet {
        ReusableMethods.scrollAndClickByDescription(productDetay);
 
     }
+
+    @Given("Click on the Edit Profile text.")
+    public void click_on_the_edit_profile_text() {
+        Assert.assertTrue(page.editProfilText.isDisplayed());
+        page.editProfilText.click();
+
+    }
+    @Given("Enter the new {string}, new {string}, new {string} and is saved")
+    public void enter_the_new_new(String name, String mail, String phone) {
+        page.ProfilEditBs(name, mail, phone);
+    }
+
+
 
 
 }
