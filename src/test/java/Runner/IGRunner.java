@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
                 "json:target/cucumber.json",},
         features = "src/test/resources/Features",
         glue = "stepdefinitions",
-        tags = "@TC2203" ,
+        tags = "@TC1301" ,
         dryRun = false
 
 
