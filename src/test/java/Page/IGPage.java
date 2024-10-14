@@ -49,6 +49,12 @@ public class IGPage {
     public WebElement productsText;
     @AndroidFindBy(xpath = "//*[@class='android.widget.ScrollView']")
     public WebElement myAccountMenu;
+    //@AndroidFindBy(uiAutomator = "new UiSelector().description(\"Logout\")")
+    //public WebElement logoutButton;
+    @AndroidFindBy(xpath = "//android.widget.ImageView[@content-desc='Logout']")
+    public WebElement logoutButton;
+    @AndroidFindBy(uiAutomator = "new UiSelector().description(\"Logout\")")
+    public WebElement logoutButton1;
 
 
     public void MenCardMethod() throws InvalidMidiDataException {
