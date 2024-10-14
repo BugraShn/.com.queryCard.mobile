@@ -4,18 +4,10 @@ import Page.IGPage;
 import io.appium.java_client.PerformsTouchActions;
 import io.appium.java_client.TouchAction;
 import io.cucumber.java.en.Given;
-
-import org.junit.Assert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-
 import utilities.OptionsMet;
 import utilities.ReusableMethods;
-
 import javax.sound.midi.InvalidMidiDataException;
-
-
 import static org.junit.Assert.*;
 import static utilities.Driver.*;
 
@@ -63,14 +55,9 @@ public class IGStepdefinition extends OptionsMet {
 
         assertTrue(page.logoutButton.isDisplayed());
     }
-    @Given("You can go to the main page by clicking on the {string}.")
-    public void  you_can_go_to_the_main_page_by_clicking_on_the_Logout(String element){
-        WebElement logout=getAppiumDriver().findElement(By.xpath("//android.widget.ImageView[@content-desc='Logout']"));
-
-
-
-
-
+    @Given("The user clicks on the Logout button")
+    public void the_user_clicks_on_the_logout_button() {
+     ReusableMethods.KordinatlaTiklama();
     }
 
 
