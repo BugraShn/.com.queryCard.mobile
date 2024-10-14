@@ -64,9 +64,9 @@ public class IGStepdefinition extends OptionsMet {
         assertTrue(page.logoutButton.isDisplayed());
     }
     @Given("You can go to the main page by clicking on the {string}.")
-    public void  you_can_go_to_the_main_page_by_clicking_on_the_Logout(String element) throws InterruptedException {
+    public void  you_can_go_to_the_main_page_by_clicking_on_the_Logout(String element){
         WebElement logout=getAppiumDriver().findElement(By.xpath("//android.widget.ImageView[@content-desc='Logout']"));
-        logout.click();
+
 
 
 
