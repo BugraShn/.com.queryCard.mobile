@@ -1,6 +1,7 @@
 package Page;
 
 
+import io.appium.java_client.AppiumBy;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import io.appium.java_client.android.AndroidDriver;
@@ -9,18 +10,16 @@ import io.appium.java_client.android.nativekey.KeyEvent;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
+import utilities.OptionsMet;
 import utilities.ReusableMethods;
 
 import static org.junit.Assert.assertTrue;
 import static utilities.Driver.getAppiumDriver;
 
-public class GGPage {
-
-    public GGPage() {
-        PageFactory.initElements(new AppiumFieldDecorator(getAppiumDriver()), this);
-    }
+public class GGPage extends BasePage {
 
     AndroidDriver driver = (AndroidDriver) getAppiumDriver();
 
@@ -45,6 +44,23 @@ public class GGPage {
     @AndroidFindBy(uiAutomator = "new UiSelector().description(\"Search Results\")")
     private WebElement searchResults;
 
+    @AndroidFindBy(uiAutomator = "new UiSelector().className(\"android.widget.EditText\").instance(0)")
+    private WebElement emailPhoneBox;
+
+    @AndroidFindBy(uiAutomator = "new UiSelector().description(\"Reset Password\")")
+    private WebElement resetPassHeader;
+
+    @AndroidFindBy(uiAutomator = "new UiSelector().className(\"android.widget.EditText\").instance(0)")
+    private WebElement newPasswordBox;
+
+    @AndroidFindBy(uiAutomator = "new UiSelector().className(\"android.widget.EditText\").instance(1)")
+    private WebElement confirmPasswordBox;
+
+    @AndroidFindBy(uiAutomator = "new UiSelector().description(\"Error\n" + "This email does not exist.\")")
+    private WebElement errorMessageEmail;
+
+    @AndroidFindBy(uiAutomator = "new UiSelector().description(\"Error\n" + "This phone does not exist.\")")
+    private WebElement errorMessagePhone;
 
 
 
@@ -70,9 +86,9 @@ public class GGPage {
         searchButton.click();
     }
 
-    public void entersSearchTextBox(String searchingItems){
+    public void entersSearchTextBox(String searchingItems) {
 
-        if (searchTextBox.getText().isBlank()){
+        if (searchTextBox.getText().isBlank()) {
 
             searchTextBox.sendKeys(searchingItems);
             ReusableMethods.wait(1);
@@ -88,15 +104,46 @@ public class GGPage {
         }
 
 
-
     }
 
-    public void searchResults(){
+    public void searchResults() {
 
         assertTrue(searchResults.isDisplayed());
     }
 
+    public void entersEmail(String emailOrPhone) {
+        emailPhoneBox.click();
+        emailPhoneBox.sendKeys(emailOrPhone);
+    }
 
+    public void verifyResetPassPage() {
+        assertTrue(resetPassHeader.isDisplayed());
+    }
+
+    public void resetPassword() {
+
+        String password = "1234567";
+
+        ReusableMethods.wait(1);
+        newPasswordBox.click();
+        newPasswordBox.sendKeys(password);
+        ReusableMethods.wait(1);
+        confirmPasswordBox.click();
+        confirmPasswordBox.sendKeys(password);
+
+        OptionsMet.clickButtonByDescription("Submit");
+
+    }
+
+    public void phoneErrorMessageIsDisplayed() {
+        assertTrue(errorMessagePhone.isDisplayed());
+
+    }
+
+    public void emailErrorMessageIsDisplayed() {
+        assertTrue(errorMessageEmail.isDisplayed());
+
+    }
 
 
 }

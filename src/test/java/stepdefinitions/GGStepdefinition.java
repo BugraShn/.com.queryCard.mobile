@@ -11,6 +11,7 @@ import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import utilities.ConfigReader;
 import utilities.OptionsMet;
 import utilities.ReusableMethods;
 
@@ -100,6 +101,46 @@ public class GGStepdefinition extends OptionsMet {
             assertTrue(button.isDisplayed());
 
         }
+
+    }
+
+    @Then("User sends {string} to email-phone box")
+    public void userSendsToEmailPhoneBox(String configdenInfo) {
+        page.entersEmail(ConfigReader.getProperty(configdenInfo));
+    }
+
+    @Then("User verifies Reset Password page opens")
+    public void userVerifiesResetPasswordPageOpens() {
+        ReusableMethods.wait(2);
+        page.verifyResetPassPage();
+
+
+    }
+
+    @Then("User resets own password")
+    public void userResetsOwnPassword() {
+
+        page.resetPassword();
+        page2.LogoGorunurTest();
+
+
+    }
+
+    @Then("User verifies that resetting password is not allowed with this {string}")
+    public void userVerifiesThatResettingPasswordIsNotAllowed(String phoneOrMail) {
+
+        if (phoneOrMail.equals("phone")){
+
+            page.phoneErrorMessageIsDisplayed();
+
+
+        } else if (phoneOrMail.equals("email")) {
+
+            page.emailErrorMessageIsDisplayed();
+
+
+        }
+
 
     }
 }

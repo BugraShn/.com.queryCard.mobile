@@ -1,8 +1,8 @@
-
+@QWERT
 Feature: US_23 The favorite icon
   Background: User opens the app
     * User makes driver adjustments
-  @QWERT
+
   Scenario: The favorite icon must be visible and active on the products on the site
             and directed page to wishlist.
     * Verify the products are visible and active
