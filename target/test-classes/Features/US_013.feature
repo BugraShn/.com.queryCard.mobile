@@ -1,18 +1,17 @@
 Feature: Men category window and subcategories should be visible and active in the home page body section
 
   Background: User opens the app
-    * User makes driver adjustments
-    * User clicks the button with description "Profile"
-    * User clicks the button with description "Sign In"
-    * As a user muss be "mobileNumber" phone and "Password" password Login
-    * User confirms to be on the homepage
 
 
   Scenario:
 
   @TC1301
   Scenario: Men category window and subcategories visibility and active test in the body section of the home page
-
+    * User makes driver adjustments
+    * User clicks the button with description "Profile"
+    * User clicks the button with description "Sign In"
+    * As a user muss be "mobileNumber" phone and "Password" password Login
+    * User confirms to be on the homepage
 
     * "Men" category window and subcategories should be visiblty test
 

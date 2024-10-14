@@ -118,6 +118,10 @@ public class BSStepdefinition extends OptionsMet {
     @Given("Enter the new {string}, new {string}, new {string} and is saved")
     public void enter_the_new_new(String name, String mail, String phone) {
         page.ProfilEditBs(name, mail, phone);
+        // asdasdasadsasd
+        // kajdshlkas
+        // kajdshlkas
+
     }
 
 
