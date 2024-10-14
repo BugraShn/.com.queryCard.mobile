@@ -1,0 +1,24 @@
+Feature: As a registered user, I would like to have a page in my Dashboard where I can view my shopping history
+  @TC_1801
+  Scenario: Order History menu item should be visible and active in Dashboard sideBar.
+    * Click on the user icon
+    * Verify the visibility of the "Order History" menu item
+    * Click on the "Order History" menu item
+    * Verify the shopping history is displayed on the page
+  @TC_1802
+  Scenario: Order invoice should be accessible from Order History list.
+    * Navigate to the "Order History" page
+    * Click on the shopping
+    * Click on the Download Receipt icon
+    * Verify the visibility of the invoice
+
+    @TC_1803
+   Scenario: Order should be canceled from Order History list
+      * Navigate to the "Order History" page
+      * Click on the red icon under the Action menu and verify the visibility of the opened popup
+      * Click on the View icon
+      * Click on the "Cancel Order" icon
+      * Verify that the "Are you sure?" popup appears
+      * Click on the "Yes, Cancel it!" button
+      * Verify the visibility of the "Successfully" message
+

@@ -33,6 +33,70 @@ public class GCAPage {
     public AndroidDriver driver = (AndroidDriver) getAppiumDriver();
     @AndroidFindBy(xpath = "//android.widget.ImageView[@content-desc=\"Profile\"]")
    public WebElement ProfileButton;
+    @AndroidFindBy(xpath = "//android.widget.ImageView[@content-desc=\"Address\"]")
+    public WebElement adressButton;
+    @AndroidFindBy(xpath = "//android.widget.ImageView[@content-desc=\"Add New Address\"]")
+    public WebElement addNewAdressButton;
+    @AndroidFindBy(xpath = "//android.view.View[@content-desc=\"gül akyol\n" +
+            "+112512555\n" +
+            "Center,  Colorado,  United States,  \n" +
+            "Free St 10\"]")
+    public WebElement oldAdress;
+    @AndroidFindBy(id = "    gül akyol\n" +
+            "+112512555\n" +
+            "    Center,  Colorado,  United States,\n" +
+            "    Free St 10")
+    public WebElement oldAdressId;
+    @AndroidFindBy(uiAutomator = "new UiSelector().className(\"android.widget.ImageView\").instance(1)")
+    public WebElement AddressEditIcon;
+    @AndroidFindBy(uiAutomator = "new UiSelector().className(\"android.widget.EditText\").instance(1)")
+    public WebElement AddressEmailEditText;
+    @AndroidFindBy(uiAutomator = "new UiSelector().description(\"Update Address\").instance(1)")
+    public WebElement updateAddressIcon;
+
+    @AndroidFindBy(uiAutomator = "new UiSelector().className(\"android.widget.ImageView\").instance(2)")
+    public WebElement AddressDeleteIcon;
+    @AndroidFindBy(uiAutomator = "new UiSelector().description(\"Delete\")")
+    public WebElement AddressDeleteAreYouSureIcon;
+    @AndroidFindBy(uiAutomator = "new UiSelector().className(\"android.widget.EditText\").instance(0)")
+    public WebElement newAddressFullNameText;
+    @AndroidFindBy(uiAutomator = "new UiSelector().description(\"Delete\")")
+    public WebElement newAddressEmailText;
+    @AndroidFindBy(uiAutomator = "new UiSelector().description(\"Delete\")")
+    public WebElement newAddressPhoneText;
+    @AndroidFindBy(uiAutomator = "new UiSelector().description(\"Delete\")")
+    public WebElement newAddressCountryText;
+    @AndroidFindBy(uiAutomator = "new UiSelector().description(\"Delete\")")
+    public WebElement newAddressStateText;
+    @AndroidFindBy(uiAutomator = "new UiSelector().description(\"Delete\")")
+    public WebElement newAddressCityText;
+    @AndroidFindBy(uiAutomator = "new UiSelector().description(\"Delete\")")
+    public WebElement newStreetAddressText;
+    @AndroidFindBy(uiAutomator = "new UiSelector().description(\"Delete\")")
+    public WebElement AddAddressIcon;
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    @AndroidFindBy(uiAutomator = "new UiSelector().description(\"Order History\")")
+    public WebElement orderHistoryIcon;
+    @AndroidFindBy(uiAutomator = "new UiSelector().description(\"#111024642\n" +
+            "08:25 AM, 11-10-2024\n" +
+            "Info: \n" +
+            "1 Product\n" +
+            "Delivery Status: \n" +
+            "Canceled\n" +
+            "Payment Status: \n" +
+            "Unpaid\n" +
+            "Total: \n" +
+            "$160.00\")")
+    public WebElement orderHistoryShopping1;
+    @AndroidFindBy(uiAutomator = " new UiSelector().description(\"Download Receipt\")")
+    public WebElement downloadReceiptIcon;
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     @AndroidFindBy(xpath = "//android.view.View[@content-desc=\"Sign In\"]")
     public WebElement SignInButton;
     @AndroidFindBy(xpath = "//android.view.View[@content-desc=\"*Use Email Instead\"]")
