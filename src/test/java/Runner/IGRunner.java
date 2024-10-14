@@ -7,14 +7,12 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         plugin = {"pretty",
                 "json:target/cucumber.json",},
-        features = "src/test/resources/features",
+        features = "src/test/resources/Features",
         glue = "stepdefinitions",
-        tags = "@2" ,
+        tags = "@TC2203" ,
         dryRun = false
 
-     ///bugra olmuyorsa burak basini
-        //dasdfghjklöä
-        ///oldu calisirsak yapariz
+
 )
 public class IGRunner {
 }
