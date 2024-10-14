@@ -13,8 +13,6 @@ Feature: Profile icon visibility test on homepage
 
 
 
-
-
   @TC2201
   Scenario: The profile icon should be visible on the homepage
     * User makes driver adjustments
@@ -37,7 +35,3 @@ Feature: Profile icon visibility test on homepage
       * You can go to the main page by clicking on the "Logout".
 
       * The user clicks on the Logout button
-
-
-
-
