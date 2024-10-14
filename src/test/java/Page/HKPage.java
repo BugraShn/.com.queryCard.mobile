@@ -196,17 +196,6 @@ public class HKPage extends BasePage{
         emptyAddressError.isDisplayed();
     }
 
-    public void verifyLogoDisplayed() {
-
-        try {
-            Thread.sleep(6000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-        assertTrue(queryCardLogoElement.isDisplayed());
-        queryCardLogoElement.click();
-    }
-
     public void verifyFooterElements(String homelink, String categorylink, String wishlistlink, String profilelink){
 
         ReusableMethods.wait(2);
@@ -257,25 +246,6 @@ public class HKPage extends BasePage{
         firstProduct.click();
     }
 
-    public void verifyHomeCategoryText(){
-
-        ReusableMethods.wait(5);
-        Assert.assertTrue(homeCategoriesText.isDisplayed());
-    }
-
-    public void verifyManCategoryText() throws InvalidMidiDataException {
-
-        Assert.assertTrue(categoriesMen.isDisplayed());
-        ReusableMethods.wait(1);
-
-        for (int i = 0; i < 14; i++) {
-            swipe(959,885,144,885);
-        }
-
-        Assert.assertTrue(categoriesToys.isDisplayed());
-
-    }
-
     public void selectSizeAndQuantity(String size,int quantity) throws InvalidMidiDataException {
         ReusableMethods.wait(2);
         clickButtonByDescription(size);
@@ -283,11 +253,6 @@ public class HKPage extends BasePage{
         clickButtonByDescription(String.valueOf(quantity));
         ReusableMethods.wait(2);
         swipe(670,2560,670,2460);
-    }
-
-    public void SearchBoxGorunurlukClickTest() {
-        assertTrue(searchBoxElement.isDisplayed());
-        searchBoxElement.click();
     }
 
     public void verifyAddressDisplay(){
