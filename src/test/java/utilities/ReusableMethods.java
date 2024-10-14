@@ -18,6 +18,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 import static java.time.Duration.ofMillis;
 import static java.util.Collections.singletonList;
+import static utilities.Driver.driver;
 import static utilities.Driver.getAppiumDriver;
 
 import io.appium.java_client.android.AndroidDriver;
@@ -29,6 +30,7 @@ import java.io.IOException;
 
 import java.text.SimpleDateFormat;
 import java.time.Duration;
+import java.util.Arrays;
 import java.util.Date;
 
 public class ReusableMethods {
@@ -143,6 +145,18 @@ public class ReusableMethods {
 
         }
 
+    }
+    public static void KordinatlaTiklama(){
+
+        final var finger = new PointerInput(PointerInput.Kind.TOUCH, "finger");
+        var tapPoint = new Point(208, 1909);
+        var tap = new Sequence(finger, 1);
+        tap.addAction(finger.createPointerMove(Duration.ofMillis(0),
+                PointerInput.Origin.viewport(), tapPoint.x, tapPoint.y));
+        tap.addAction(finger.createPointerDown(PointerInput.MouseButton.LEFT.asArg()));
+        tap.addAction(new Pause(finger, Duration.ofMillis(50)));
+        tap.addAction(finger.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
+        driver.perform(Arrays.asList(tap));
     }
 
 
