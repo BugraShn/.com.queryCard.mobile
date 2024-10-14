@@ -119,6 +119,7 @@ public class BSStepdefinition extends OptionsMet {
     public void enter_the_new_new(String name, String mail, String phone) {
         page.ProfilEditBs(name, mail, phone);
         // asdasdasadsasd
+        // kajdshlkas
     }
 
 
