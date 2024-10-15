@@ -28,7 +28,7 @@ Feature: Profile icon visibility test on homepage
       * User clicks the button with description "Profile"
       * The "Logout" link should be visible in the profile dashboard sidebar
       * The user clicks on the Logout button
-      #hkhlkhlkjlkj
+      * User confirms to be on the homepage
 
 
 

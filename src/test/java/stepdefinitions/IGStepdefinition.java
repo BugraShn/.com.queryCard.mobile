@@ -58,9 +58,10 @@ public class IGStepdefinition extends OptionsMet {
     @Given("The user clicks on the Logout button")
     public void the_user_clicks_on_the_logout_button() {
      ReusableMethods.KordinatlaTiklama();
+     ReusableMethods.wait(2);
+
     }
 
-//////jlököälä
 
     }
 
