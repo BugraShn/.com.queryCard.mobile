@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
                 "json:target/cucumber.json",},
         features = "src/test/resources/features",
         glue = "stepdefinitions",
-        tags = "@QWERT" ,
+        tags = "   " ,
         dryRun = false
 )
 public class PGRunner {

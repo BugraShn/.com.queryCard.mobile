@@ -1,4 +1,4 @@
-@QWERT
+
 Feature: US_23 The favorite icon
   Background: User opens the app
     * User makes driver adjustments
@@ -25,5 +25,3 @@ Feature: US_23 The favorite icon
     * Verify the directed page is not wishlist
     * Driver turns off
 
-  Scenario: Saved items on Wishlist page.
-    * User clicks the button "favorite"
