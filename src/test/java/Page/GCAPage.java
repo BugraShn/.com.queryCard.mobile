@@ -106,6 +106,8 @@ public class GCAPage {
     public WebElement orderHistoryShopping1;
     @AndroidFindBy(uiAutomator = " new UiSelector().description(\"Download Receipt\")")
     public WebElement downloadReceiptIcon;
+    @AndroidFindBy(uiAutomator = "new UiSelector().description(\"Print Invoice\")")
+    public WebElement printReceipt;
 
 
 

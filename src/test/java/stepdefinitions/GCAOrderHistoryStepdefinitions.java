@@ -9,6 +9,8 @@ import org.openqa.selenium.interactions.Actions;
 import utilities.OptionsMet;
 import utilities.ReusableMethods;
 
+import javax.sound.midi.InvalidMidiDataException;
+
 import static utilities.Driver.driver;
 import static utilities.Driver.getAppiumDriver;
 
@@ -47,8 +49,9 @@ public class GCAOrderHistoryStepdefinitions extends OptionsMet {
     }
 
     @Given("Click on the shopping")
-    public void click_on_the_shopping() {
+    public void click_on_the_shopping() throws InvalidMidiDataException {
         OptionsMet.clickAndVerify(gcaPage.orderHistoryShopping1);
+         OptionsMet.swipe(480,2075,480,846);
 
     }
 
@@ -59,6 +62,7 @@ public class GCAOrderHistoryStepdefinitions extends OptionsMet {
 
     @Given("Verify the visibility of the invoice")
     public void verify_the_visibility_of_the_invoice() {
+        Assert.assertTrue(gcaPage.printReceipt.isDisplayed());
 
     }
 
