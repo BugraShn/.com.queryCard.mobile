@@ -140,5 +140,67 @@ public class GGStepdefinition extends OptionsMet {
     }
 
 
+    @Then("Enters {string} to Email text box")
+    public void entersToEmailTextBox(String configdenInfo) {
+
+        page.sigInMail(ConfigReader.getProperty(configdenInfo));
+
+    }
+
+    @And("Enters {string} to Password text box")
+    public void entersToPasswordTextBox(String configdenInfo) {
+
+        page.sigInPass(ConfigReader.getProperty(configdenInfo));
+
+    }
+
+    @Then("User verifies old password box is displayed")
+    public void userVerifiesOldPasswordBoxIsDisplayed() {
+
+        page.verifiesOldPass();
+
+
+    }
+
+    @Then("User verifies new password box is displayed")
+    public void userVerifiesNewPasswordBoxIsDisplayed() {
+
+        page.verifiesNewPass();
+
+
+    }
+
+    @Then("User verifies confirm password box is displayed")
+    public void userVerifiesConfirmPasswordBoxIsDisplayed() {
+
+       page.verifiesConfirmPass();
+
+    }
+
+    @Then("User enters {string} to old password box")
+    public void userEntersToOldPasswordBox(String configdenOldPass) {
+
+        page.entersOldPass(ConfigReader.getProperty(configdenOldPass));
+
+
+    }
+
+    @Then("User enters {string} to new password box and confirm")
+    public void userEntersToNewPasswordBoxAndConfirm(String newPass) {
+
+        page.entersNewPass(newPass);
+    }
+
+    @Then("User verifies that the password has been changed")
+    public void userVerifiesThatThePasswordHasBeenChanged() {
+
+        page.passChangeMessageIsDisplayed();
+    }
+
+    @Then("User verifies that the password has not been changed")
+    public void userVerifiesThatThePasswordHasNotBeenChanged() {
+
+        page.passChangeErrorMessageIsDisplayed();
+    }
 }
 
