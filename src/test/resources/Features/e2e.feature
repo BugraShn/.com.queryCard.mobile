@@ -1,4 +1,4 @@
-@e2e
+@asd
 Feature:
 
   Background: User opens the app
@@ -10,6 +10,14 @@ Feature:
 
   Scenario:  asd
 
-    * Clicks on the category
-    * Women are selected
-    * Clicks on filtering
+    * User click the button "Category"
+    * Checks the functionality of the Women button and clicks it
+    * As a registered user, I want the filtering button to be active and visible.
+    * User clicks the button with itemName Nike Air Force 1 Sneakers and added
+    * Selects the color of the shoe and adds it to the cart
+    * Goes to cart and confirms it is the correct product
+    * Proceed to the payment page with the Proceed to Checkout button.
+    * Selects the address and clicks Save & Share button
+    * Select cash and delivery and complete the order
+
+

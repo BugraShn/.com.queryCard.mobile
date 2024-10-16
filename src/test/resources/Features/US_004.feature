@@ -10,4 +10,3 @@ Feature: As a user, I want to be able to see the categories under the categories
 
     * Home page categories text is verified
     * Category names are verified
-    * Verify all the categories are visible under the Categories heading.
