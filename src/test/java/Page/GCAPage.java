@@ -54,26 +54,42 @@ public class GCAPage {
     @AndroidFindBy(uiAutomator = "new UiSelector().description(\"Update Address\").instance(1)")
     public WebElement updateAddressIcon;
 
+
+    @AndroidFindBy(uiAutomator = "new UiSelector().descriptionContains(\"Address Updated Successfully!\")")
+    public WebElement succesfullyUpdate;
+    @AndroidFindBy(uiAutomator = "new UiSelector().descriptionContains(\"Address Added\")")
+    public WebElement succesfullyAdressAdded;
     @AndroidFindBy(uiAutomator = "new UiSelector().className(\"android.widget.ImageView\").instance(2)")
     public WebElement AddressDeleteIcon;
     @AndroidFindBy(uiAutomator = "new UiSelector().description(\"Delete\")")
     public WebElement AddressDeleteAreYouSureIcon;
     @AndroidFindBy(uiAutomator = "new UiSelector().className(\"android.widget.EditText\").instance(0)")
     public WebElement newAddressFullNameText;
-    @AndroidFindBy(uiAutomator = "new UiSelector().description(\"Delete\")")
+    @AndroidFindBy(uiAutomator = "new UiSelector().className(\"android.widget.EditText\").instance(1)")
     public WebElement newAddressEmailText;
-    @AndroidFindBy(uiAutomator = "new UiSelector().description(\"Delete\")")
+    @AndroidFindBy(uiAutomator = "new UiSelector().className(\"android.widget.EditText\").instance(2)")
     public WebElement newAddressPhoneText;
-    @AndroidFindBy(uiAutomator = "new UiSelector().description(\"Delete\")")
+    @AndroidFindBy(uiAutomator = "new UiSelector().description(\"Country\")")
     public WebElement newAddressCountryText;
-    @AndroidFindBy(uiAutomator = "new UiSelector().description(\"Delete\")")
+    @AndroidFindBy(uiAutomator = "new UiSelector().description(\"State\")")
     public WebElement newAddressStateText;
-    @AndroidFindBy(uiAutomator = "new UiSelector().description(\"Delete\")")
+    @AndroidFindBy(uiAutomator = "new UiSelector().description(\"City\")")
     public WebElement newAddressCityText;
-    @AndroidFindBy(uiAutomator = "new UiSelector().description(\"Delete\")")
+    @AndroidFindBy(uiAutomator = "new UiSelector().className(\"android.widget.EditText\").instance(3)")
     public WebElement newStreetAddressText;
-    @AndroidFindBy(uiAutomator = "new UiSelector().description(\"Delete\")")
+    @AndroidFindBy(uiAutomator = "new UiSelector().description(\"Add Address\")")
     public WebElement AddAddressIcon;
+    @AndroidFindBy(uiAutomator = " new UiSelector().description(\"Albania\")")
+    public WebElement albania;
+    @AndroidFindBy(uiAutomator = "new UiSelector().description(\"Berat District\")")
+    public WebElement beratDistrict;
+    @AndroidFindBy(uiAutomator = "  new UiSelector().description(\"Banaj\")")
+    public WebElement banaj;
+    @AndroidFindBy(uiAutomator = "new UiSelector().description(\"Dismiss\")")
+    public WebElement dismiss;
+
+
+
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     @AndroidFindBy(uiAutomator = "new UiSelector().description(\"Order History\")")
     public WebElement orderHistoryIcon;
