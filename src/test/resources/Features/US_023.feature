@@ -25,5 +25,3 @@ Feature: US_23 The favorite icon
     * Verify the directed page is not wishlist
     * Driver turns off
 
-  Scenario: Saved items on Wishlist page.
-    * User clicks the button "favorite"
