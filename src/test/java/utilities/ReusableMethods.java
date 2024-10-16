@@ -18,6 +18,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 import static java.time.Duration.ofMillis;
 import static java.util.Collections.singletonList;
+import static org.junit.Assert.assertTrue;
 import static utilities.Driver.driver;
 import static utilities.Driver.getAppiumDriver;
 
@@ -134,7 +135,7 @@ public class ReusableMethods {
                 ));
 
                 // Eğer element bulunursa, tıklama işlemini gerçekleştir
-                Assert.assertTrue(element.isDisplayed());
+                assertTrue(element.isDisplayed());
 
                 element.click();
                 canScrollMore = false; // Döngüyü sonlandır
@@ -158,6 +159,8 @@ public class ReusableMethods {
         tap.addAction(finger.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
         driver.perform(Arrays.asList(tap));
     }
+
+
 
 
 
