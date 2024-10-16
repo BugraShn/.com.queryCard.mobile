@@ -11,6 +11,7 @@ import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
+import utilities.ConfigReader;
 import utilities.OptionsMet;
 import utilities.ReusableMethods;
 
@@ -20,6 +21,7 @@ import static utilities.Driver.getAppiumDriver;
 public class GGPage extends BasePage {
 
     AndroidDriver driver = (AndroidDriver) getAppiumDriver();
+    String password = ConfigReader.getProperty("ggValidPass");
 
     @AndroidFindBy(uiAutomator = "new UiSelector().description(\"App Download\")")
     private WebElement appDownloadLink;
@@ -59,6 +61,32 @@ public class GGPage extends BasePage {
 
     @AndroidFindBy(uiAutomator = "new UiSelector().description(\"Error\n" + "This phone does not exist.\")")
     private WebElement errorMessagePhone;
+
+    @AndroidFindBy(uiAutomator = "new UiSelector().className(\"android.widget.EditText\").instance(0)")
+    private WebElement oldPassdBox;
+
+    @AndroidFindBy(uiAutomator = "new UiSelector().className(\"android.widget.EditText\").instance(1)")
+    private WebElement newPasswBox;
+
+    @AndroidFindBy(uiAutomator = "new UiSelector().className(\"android.widget.EditText\").instance(2)")
+    private WebElement confirmPassBox;
+
+   @AndroidFindBy(uiAutomator = "new UiSelector().className(\"android.widget.EditText\").instance(1)")
+   private WebElement passwordBox;
+
+   @AndroidFindBy(uiAutomator = "new UiSelector().description(\"Change Password\n" + "Password Updated Successfully\")")
+   private WebElement passwordChangeMessage;
+
+    @AndroidFindBy(uiAutomator = "new UiSelector().description(\"Change Password\n" + "The old password does not match.\")")
+    private WebElement passwordChangeErroeMessage;
+
+
+
+
+
+
+
+
 
 
 
@@ -120,7 +148,6 @@ public class GGPage extends BasePage {
 
     public void resetPassword() {
 
-        String password = "1234567";
 
         ReusableMethods.wait(1);
         newPasswordBox.click();
@@ -143,9 +170,62 @@ public class GGPage extends BasePage {
 
     }
 
+    public void entersOldPass(String oldpass){
+
+        oldPassdBox.click();
+        oldPassdBox.sendKeys(oldpass);
+
+    }
+
+    public void entersNewPass(String newpass){
 
 
 
+        newPasswBox.click();
+        newPasswBox.sendKeys(newpass);
+        confirmPassBox.click();
+        confirmPassBox.sendKeys(newpass);
 
+
+    }
+
+    public void sigInMail(String email){
+        emailPhoneBox.click();
+        emailPhoneBox.sendKeys(email);
+
+    }
+
+    public void sigInPass(String password){
+
+        passwordBox.click();
+        passwordBox.sendKeys(password);
+
+
+    }
+
+    public void verifiesOldPass(){
+        assertTrue(oldPassdBox.isDisplayed());
+    }
+
+    public void verifiesNewPass(){
+        assertTrue(newPasswBox.isDisplayed());
+    }
+
+    public void verifiesConfirmPass(){
+        assertTrue(confirmPassBox.isDisplayed());
+    }
+
+    public void passChangeMessageIsDisplayed(){
+
+        assertTrue(passwordChangeMessage.isDisplayed());
+
+    }
+
+
+    public void passChangeErrorMessageIsDisplayed(){
+
+        assertTrue(passwordChangeErroeMessage.isDisplayed());
+
+    }
 
 }
