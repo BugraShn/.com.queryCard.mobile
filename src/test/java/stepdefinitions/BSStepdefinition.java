@@ -2,20 +2,13 @@ package stepdefinitions;
 
 import Page.BSPage;
 import Page.QueryCardPage;
-import com.sun.source.tree.AssertTree;
 import io.cucumber.java.en.Given;
 import org.junit.Assert;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
-import utilities.ConfigReader;
 import utilities.OptionsMet;
 import utilities.ReusableMethods;
-
 import javax.sound.midi.InvalidMidiDataException;
-import java.sql.ResultSet;
-
 import static utilities.Driver.getAppiumDriver;
-import static utilities.Driver.quitAppiumDriver;
 
 public class BSStepdefinition extends OptionsMet {
 
@@ -31,6 +24,7 @@ public class BSStepdefinition extends OptionsMet {
         Assert.assertTrue(page.homeCategoriesText.isDisplayed());
 
     }
+
     @Given("Category names are verified")
     public void category_names_are_verified() throws InvalidMidiDataException {
 
@@ -118,9 +112,7 @@ public class BSStepdefinition extends OptionsMet {
     @Given("Enter the new {string}, new {string}, new {string} and is saved")
     public void enter_the_new_new(String name, String mail, String phone) {
         page.ProfilEditBs(name, mail, phone);
-        // asdasdasadsasd
-        // kajdshlkas
-        // kajdshlkas
+
 
 
     }
