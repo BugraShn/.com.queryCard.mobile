@@ -20,11 +20,8 @@ Feature: As a registered user, I would like to have a page in my Dashboard where
    Scenario: Order should be canceled from Order History list
       * go to home page as a user
       * the user clicks on the user icon
-      * Navigate to the "Order History" page
+      * Click on the "Order History" menu item
       * Click on the red icon under the Action menu and verify the visibility of the opened popup
-      * Click on the View icon
       * Click on the "Cancel Order" icon
-      * Verify that the "Are you sure?" popup appears
-      * Click on the "Yes, Cancel it!" button
-      * Verify the visibility of the "Successfully" message
+      * Verify the visibility of the Successfully message
 

@@ -59,6 +59,8 @@ public class GCAPage {
     public WebElement succesfullyUpdate;
     @AndroidFindBy(uiAutomator = "new UiSelector().descriptionContains(\"Address Added\")")
     public WebElement succesfullyAdressAdded;
+    @AndroidFindBy(uiAutomator = "new UiSelector().descriptionContains(\"Order Canceled\")")
+    public WebElement succesfullyAOrderCancelled;
     @AndroidFindBy(uiAutomator = "new UiSelector().className(\"android.widget.ImageView\").instance(2)")
     public WebElement AddressDeleteIcon;
     @AndroidFindBy(uiAutomator = "new UiSelector().description(\"Delete\")")
@@ -108,6 +110,10 @@ public class GCAPage {
     public WebElement downloadReceiptIcon;
     @AndroidFindBy(uiAutomator = "new UiSelector().description(\"Print Invoice\")")
     public WebElement printReceipt;
+    @AndroidFindBy(uiAutomator = "new UiSelector().description(\"Cancel Order\")")
+    public WebElement cancelOrderIcon;
+    @AndroidFindBy(uiAutomator = "(//android.widget.ImageView[contains(@content-desc, 'Product')])[1]\n")
+    public WebElement urun1CancelOrder;
 
 
 
@@ -151,10 +157,6 @@ public class GCAPage {
     public WebElement addToCartIcon;
     @AndroidFindBy(xpath = "//android.widget.ImageView[@content-desc=\"Favorite\"]")
     public WebElement favoriteIcon;
-    @AndroidFindBy(xpath = "00000000-0000-0032-0000-01f500000003")
-    public WebElement success;
-    @AndroidFindBy(uiAutomator = "00000000-0000-0032-0000-01f500000003")
-    public WebElement success2;
     @AndroidFindBy(xpath = "00000000-0000-0032-0000-02d500000003")
     public WebElement sepet;
     @AndroidFindBy(uiAutomator = "new UiSelector().className(\"android.widget.ImageView\").instance(12)")
