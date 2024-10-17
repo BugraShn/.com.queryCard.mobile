@@ -198,6 +198,7 @@ public class BSStepdefinition extends OptionsMet {
 
         String message = page.okayPicture.getAttribute("contentDescription");
         driver.sendSMS("12345678911",message+"Siparişiniz verilmiştir. Bizimle olduğunuz için teşekkür ederiz <Team 2>");
+        ReusableMethods.wait(2);
 
     }
 

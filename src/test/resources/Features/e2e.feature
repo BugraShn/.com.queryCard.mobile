@@ -1,5 +1,6 @@
-@asd
-Feature:
+
+@E2E
+Feature: As a registered user, you should purchase sneakers from the site's popular products.
 
   Background: User opens the app
     * User makes driver adjustments
@@ -8,7 +9,7 @@ Feature:
     * As a user muss be "e2eNumber" phone and "e2ePassword" password Login
     * User confirms to be on the homepage
 
-  Scenario:  asd
+  Scenario: Order a popular sneaker from the Women category
 
     * User click the button "Category"
     * Checks the functionality of the Women button and clicks it
@@ -19,5 +20,5 @@ Feature:
     * Proceed to the payment page with the Proceed to Checkout button.
     * Selects the address and clicks Save & Share button
     * Select cash and delivery and complete the order
-
+    * Driver turns off
 
