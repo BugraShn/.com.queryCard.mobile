@@ -149,7 +149,6 @@ public class GCAUserAdressStepdefinition extends OptionsMet {
     @Given("Verify the visibility of the {string} message")
     public void verify_the_visibility_of_the_message(String string) {
         assertTrue(gcaPage.succesfullyAdressAdded.isDisplayed());
-
         ReusableMethods.wait(2);
     }
 

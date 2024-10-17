@@ -42,7 +42,7 @@ public class GCAStepdefinition extends OptionsMet {
 
         @Given("go to home page as a user")
         public void go_to_home_page_as_a_user() throws InterruptedException {
-            getAppiumDriver();
+           // getAppiumDriver();
             ReusableMethods.wait(5);
             gcaPage.userLoginWithMail();
         }
