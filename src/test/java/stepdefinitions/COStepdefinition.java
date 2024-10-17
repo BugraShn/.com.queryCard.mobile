@@ -201,17 +201,6 @@ public class COStepdefinition extends OptionsMet {
     }
 
 
-    @Given("User clicks the Logout button")
-    public void user_clicks_the_logout_button() {
-        page.logoutButton.click();
-    }
-    @Given("Verifies sign in is visible and logout performed succesfully")
-    public void verifies_sign_in_is_visible_and_logout_performed_succesfully() {
-        Assert.assertTrue(page.signInButton.isDisplayed());
-    }
-
-
-
     @Given("Click the Add to cart and Save & Pay button.")
     public void click_the_add_to_cart_and_button() throws InvalidMidiDataException {
         page.addTocart();

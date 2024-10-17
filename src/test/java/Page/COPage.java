@@ -46,8 +46,7 @@ public class COPage {
 
     //Us024
 
-    @AndroidFindBy(accessibility = "Sign In")
-    public WebElement signInButton;
+
 
     @AndroidFindBy(accessibility = "*Use Email Instead")
     public WebElement useMailInsteadLink;
@@ -105,8 +104,6 @@ public class COPage {
     @AndroidFindBy(accessibility = "Print Invoice")
     public WebElement printInvoice;
 
-    //    @AndroidFindBy(accessibility = "Success\nYour payment has been confirmed")
-//    public WebElement paymentConfirmedText;
     @AndroidFindBy(accessibility = "Logout")
     public WebElement logoutButton;
     @AndroidFindBy(xpath = "//android.view.View[@content-desc=\"Thank you for your order!\n" +
