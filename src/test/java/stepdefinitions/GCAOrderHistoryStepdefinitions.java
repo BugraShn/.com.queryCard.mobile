@@ -54,7 +54,7 @@ public class GCAOrderHistoryStepdefinitions extends OptionsMet {
 
     @Given("Click on the shopping")
     public void click_on_the_shopping() throws InvalidMidiDataException {
-        OptionsMet.clickAndVerify(gcaPage.orderHistoryShopping1);
+      ReusableMethods.orderHistoryKoordinatTiklama();
         ReusableMethods.wait(2);
          OptionsMet.swipe(480,2075,480,846);
 
