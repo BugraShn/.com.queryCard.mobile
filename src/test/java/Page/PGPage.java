@@ -25,8 +25,8 @@ public class PGPage {
     @AndroidFindBy(uiAutomator = "new UiSelector().description(\"description\")")
     public WebElement textOfPrivateProduct;
 
-    @AndroidFindBy(uiAutomator = "new UiSelector().description(\"Sign In\").instance(0)")
-    public WebElement textOfSignInPage;
+    @AndroidFindBy(xpath = "(//*[@content-desc='Sign In'])[1]")
+    public WebElement SignInTitle;
 
 
 
