@@ -1,10 +1,6 @@
 package stepdefinitions;
 
-import io.cucumber.java.en.And;
-import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
-import utilities.OptionsMet;
-
+import io.cucumber.java.en.*;
 import javax.sound.midi.InvalidMidiDataException;
 
 import static utilities.OptionsMet.VerifyElementText;
@@ -116,6 +112,29 @@ public class HKStepdefinition extends BaseStep {
      US_25
      **/
 
+    @And("User clicks on the eye mark to see the order summary")
+    public void userClicksOnTheEyeMarkToSeeTheOrderSummary() {
+
+        PAGES.getHkPage().clickOrder();
+    }
+
+    @Then("User verifies {string} displayed")
+    public void userVerifiesDisplayed(String text) {
+
+        PAGES.getHkPage().verifyWithDescription(text);
+    }
+
+    @Then("User fills important information")
+    public void userFillsImportantInformation() {
+
+        PAGES.getHkPage().fillReturnRequestInfo();
+    }
+
+    @Then("User verifies the presence of products in the return order")
+    public void userVerifiesThePresenceOfProductsInTheReturnOrder() {
+
+        PAGES.getHkPage().checkReturnOrderList();
+    }
 
     /**
      US_26
@@ -128,25 +147,30 @@ public class HKStepdefinition extends BaseStep {
     }
 
 
+    @Then("Verifies that the product has been added to favourites")
+    public void verifiesThatTheProductHasBeenAddedToFavourites() {
+
+        PAGES.getHkPage().checkWishlist();
+    }
 
 
+    @Then("Verifies that the user favourite icon is displayed and adds products")
+    public void verifiesThatTheUserFavouriteIconIsDisplayedAndAddsProducts() {
 
+        PAGES.getHkPage().verifyClickFavIcon();
+    }
 
+    @And("User deletes the product from favourites")
+    public void userDeletesTheProductFromFavourites() {
 
+        PAGES.getHkPage().clickWishlistFavIcon();
+    }
 
+    @Then("User confirms that the product has been deleted from favourites")
+    public void userConfirmsThatTheProductHasBeenDeletedFromFavourites() {
 
-
-
-
-
-
-
-
-
-
-
-
-
+        PAGES.getHkPage().verifyRemoveWishlistErrorMessage();
+    }
 
 
 }

@@ -1,5 +1,7 @@
 package Page;
 
+import io.appium.java_client.MobileBy;
+import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
@@ -10,7 +12,11 @@ import utilities.ReusableMethods;
 
 import javax.sound.midi.InvalidMidiDataException;
 
-import static org.junit.Assert.assertTrue;
+import java.util.List;
+import java.util.Random;
+
+import static org.junit.Assert.*;
+import static utilities.Driver.getAppiumDriver;
 import static utilities.OptionsMet.*;
 
 public class HKPage extends BasePage{
@@ -118,6 +124,91 @@ public class HKPage extends BasePage{
     @AndroidFindBy(uiAutomator = "new UiSelector().className(\"android.view.View\").instance(4)")
     private WebElement addWishListToast;
 
+    @AndroidFindBy(uiAutomator = "new UiSelector().className(\"android.widget.ImageView\").instance(2)")
+    private WebElement favIcon;
+
+    @AndroidFindBy(uiAutomator = "new UiSelector().className(\"android.view.View\").instance(7)")
+    private List<WebElement> productWishList;
+
+    @AndroidFindBy(uiAutomator = "new UiSelector().className(\"android.widget.ImageView\").instance(2)")
+    private WebElement wishlistFavIcon;
+
+    @AndroidFindBy(xpath = "//android.view.View[@content-desc=\"Remove\n" + "Removed from Wishlist\"]")
+    private WebElement removeWistlistErrorMessage;
+
+    @AndroidFindBy(uiAutomator = "new UiSelector().className(\"android.view.View\").instance(8)")
+    private List<WebElement> orderList;
+
+    @AndroidFindBy(uiAutomator = "new UiSelector().className(\"android.widget.ImageView\").instance(1)")
+    private WebElement selectProductRR; // return requestteki ürününün yanındaki kutucuk
+
+    @AndroidFindBy(uiAutomator = "new UiSelector().className(\"android.view.View\").instance(4)")
+    private List<WebElement> returnReasonDD; // return reason dropdown menü
+
+    @AndroidFindBy(uiAutomator = "new UiSelector().className(\"android.widget.EditText\")")
+    private WebElement returnNote; // return request return note kutucuğuü
+
+    @AndroidFindBy(uiAutomator = "new UiSelector().className(\"android.view.View\").instance(8)")
+    private List<WebElement> returnOrdersList; // return order sayfasındaki siparişlerlin listesi
+
+    public void checkReturnOrderList(){
+
+        assertFalse(returnOrdersList.isEmpty());
+    }
+
+    public void fillReturnRequestInfo(){
+
+        selectProductRR.click();
+        ReusableMethods.wait(1);
+
+        Random random = new Random();
+        returnReasonDD.get(random.nextInt(0,returnReasonDD.size())).click();
+        ReusableMethods.wait(1);
+
+        returnNote.sendKeys(faker.lorem().paragraph(30));
+        ReusableMethods.wait(1);
+
+        OptionsMet.clickButtonByDescription("Request Return");
+    }
+
+    public void clickOrder(){
+
+        orderList.get(0).click();
+    }
+
+    public void verifyWithDescription(String description) {
+        AndroidDriver driver = (AndroidDriver) getAppiumDriver();
+        WebElement button = driver.findElement(MobileBy.AndroidUIAutomator(
+                "new UiSelector().description(\"" + description + "\")"));
+        assertTrue(button.isDisplayed());
+    }
+
+    public void verifyRemoveWishlistErrorMessage(){
+
+        removeWistlistErrorMessage.isDisplayed();
+    }
+
+    public void clickWishlistFavIcon(){
+
+        ReusableMethods.wait(2);
+        wishlistFavIcon.click();
+    }
+
+    public void checkWishlist(){
+
+        Assert.assertFalse(productWishList.isEmpty());
+        for (int i = 0; i < productWishList.size(); i++) {
+            Assert.assertTrue(productWishList.get(i).isEnabled());
+
+        }
+
+    }
+
+    public void verifyClickFavIcon(){
+
+        clickAndVerify(favIcon);
+    }
+
     public void clickEditButton(){
 
         editButton.click();
@@ -194,15 +285,6 @@ public class HKPage extends BasePage{
         invalidMailError.isDisplayed();
         emptyPhoneError.isDisplayed();
         emptyAddressError.isDisplayed();
-    }
-
-    public void verifyFooterElements(String homelink, String categorylink, String wishlistlink, String profilelink){
-
-        ReusableMethods.wait(2);
-        VerifyElementText(homelink);
-        VerifyElementText(categorylink);
-        VerifyElementText(wishlistlink);
-        VerifyElementText(profilelink);
     }
 
     public void scrollPopularBrands() throws InvalidMidiDataException {
